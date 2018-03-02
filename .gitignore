@@ -1,2 +1,5 @@
-data
+data/celebA
 model
+__pycache__
+*.pyc
+*.swp
