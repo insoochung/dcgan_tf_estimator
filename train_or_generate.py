@@ -48,7 +48,7 @@ def write_image(image, path, name):
     if not os.path.exists(path):
         os.makedirs(path)
 
-    image_path = os.path.join(path, name)
+    image_path = os.path.join(path, name, 'jpg')
     print('Writing to ' + image_path)
     with open(image_path, 'wb') as f:
         f.write(image)
@@ -61,7 +61,7 @@ def generate(dcgan, args, n_row=4, n_col=8):
     image = list(image)[0]
     if not os.path.exists('result'):
         os.makedirs('result')
-    path = 'result/{}'.format(len(glob.glob('result/*/')))
+    path = 'result/{:03}'.format(len(glob.glob('result/*/')))
     write_image(image, path, 'random')
 
     inter_z = []
